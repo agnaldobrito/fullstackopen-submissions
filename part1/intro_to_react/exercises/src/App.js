@@ -14,6 +14,7 @@ function App() {
         <Content part1={part1} part2={part2} part3={part3}
                  exercises1={exercises1} exercises2={exercises2} exercises3={exercises3}/>
         <Total exercises1={exercises1} exercises2={exercises2} exercises3={exercises3}/>
+
     </div>
   );
 }
@@ -25,19 +26,46 @@ function Header(props){
 }
 
 function Content(props){
+  
   return(
     <>
+      <p> Exercise 1.1</p>
       <p>{props.part1} {props.exercises1}</p>
       <p>{props.part2} {props.exercises2}</p>
       <p>{props.part3} {props.exercises3}</p>
+
+      <p> Exercise 1.2</p>
+      <Part1 part1={props.part1} exercises1 ={props.exercises1}/>
+      <Part2 part2={props.part2} exercises2 ={props.exercises2}/>
+      <Part3 part3={props.part3} exercises3 ={props.exercises3}/>
+
     </>
   )
 }
 
+
 function Total(props){
   return(
     <p>Total of exercises = {props.exercises1 + props.exercises2 + props.exercises3}</p>
-  )
-}
+    )
+  }
 
-export default App;
+  //Exercise 1.2
+  
+  function Part1(props){
+    return(
+      <p>{props.part1} {props.exercises1}</p>
+    )
+  }
+  function Part2(props){
+    return(
+      <p>{props.part2} {props.exercises2}</p>
+    )
+  }
+  function Part3(props){
+    return(
+      <p>{props.part3} {props.exercises3}</p>
+    )
+  }
+  export default App;
+  
